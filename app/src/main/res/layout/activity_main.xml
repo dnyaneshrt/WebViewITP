@@ -1,90 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="5dp">
+    tools:context=".MainActivity">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/et_url"
-            android:layout_width="0dp"
-            android:layout_weight="0.9"
-            android:layout_height="match_parent"
-            android:hint="enter url here:"
-            android:textSize="20sp"
-            android:padding="10dp"/>
-        <ImageButton
-            android:id="@+id/btn_search"
-            android:layout_width="0dp"
-            android:layout_weight="0.1"
-            android:layout_height="wrap_content"
-            android:background="@drawable/search"
-            android:onClick="loadData"
-            />
-    </LinearLayout>
-
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
         android:padding="5dp">
 
-        <ImageButton
-            android:id="@+id/btn_youtube"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="match_parent"
-            android:background="@drawable/youtube"
-            android:layout_margin="2dp"
-            android:onClick="loadData"
-            />
 
-        <ImageButton
-            android:id="@+id/btn_linked"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="match_parent"
-            android:background="@drawable/linkedin"
-            android:layout_margin="2dp"
-            android:onClick="loadData"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btn_java"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="match_parent"
-            android:background="@drawable/java"
-            android:layout_margin="2dp"
-            android:onClick="loadData"
-            />
-        <ImageButton
-            android:id="@+id/btn_google"
-            android:layout_width="0dp"
-            android:layout_weight="0.25"
-            android:layout_height="match_parent"
-            android:background="@drawable/google"
-            android:layout_margin="2dp"
-            android:onClick="loadData"
-            />
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="0dp"
+                android:layout_weight="0.9"
+                android:layout_height="match_parent"
+                android:hint="enter url here:"
+                android:textSize="20sp"
+                android:background="@drawable/background"
+                android:layout_margin="5dp"
+                android:padding="10dp"/>
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search"
+                android:onClick="loadData"
+                />
+        </LinearLayout>
 
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="149dp"
+                android:layout_y="309dp" />
+        </WebView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/btn_youtube"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:layout_height="match_parent"
+                android:background="@drawable/youtube"
+                android:layout_margin="2dp"
+                android:onClick="loadData"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_linked"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:layout_height="match_parent"
+                android:background="@drawable/linkedin"
+                android:layout_margin="2dp"
+                android:onClick="loadData"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_java"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:layout_height="match_parent"
+                android:background="@drawable/java"
+                android:layout_margin="2dp"
+                android:onClick="loadData"
+                />
+            <ImageButton
+                android:id="@+id/btn_google"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:layout_height="match_parent"
+                android:background="@drawable/google"
+                android:layout_margin="2dp"
+                android:onClick="loadData"
+                />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
